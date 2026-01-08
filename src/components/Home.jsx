@@ -10,12 +10,12 @@ const Home = () => {
         <AnimatedSection>
           <div className="flex gap-6 md:gap-12 2xl:gap-16 w-full justify-center items-center p-4">
             <img
-              src="/images/ai-department-logo.jpeg"
+              src={process.env.PUBLIC_URL + "/images/ai-department-logo.jpeg"}
               alt="AI dept logo"
-               className="w-20 md:w-28 lg:w-[130px] 2xl:w-[230px] h-auto object-contain"
+              className="w-20 md:w-28 lg:w-[130px] 2xl:w-[230px] h-auto object-contain"
             />
             <img
-              src="/images/iith-logo.jpeg"
+              src={process.env.PUBLIC_URL + "/images/iith-logo.jpeg"}
               alt="AI dept logo"
               className="w-64 md:w-96 lg:w-[400px] 2xl:w-[800px] h-auto object-contain"
             />
