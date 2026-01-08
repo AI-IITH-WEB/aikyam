@@ -1,4 +1,3 @@
-import './App.css';
 import About from './components/About';
 import Header from './components/common/Header';
 import EventSchedule from './components/EventSchedule';
