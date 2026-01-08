@@ -42,14 +42,30 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md">
-      <nav className="container mx-auto px-4 py-4 relative">
-        <div className="flex items-center justify-end md:justify-center">
+      <nav className="container mx-auto py-4 relative">
+        <div className="flex items-center justify-between px-2">
+        <div className="flex gap-6 2xl:gap-16 items-center">
+            <a href="https://ai.iith.ac.in" target="_blank" rel="noopener noreferrer">
+            <img
+              src={process.env.PUBLIC_URL + "/images/ai-department-logo.jpeg"}
+              alt="AI dept logo"
+              className="w-12 lg:w-20 h-auto object-contain"
+            />
+            </a>
+            <a href="https://iith.ac.in" target="_blank" rel="noopener noreferrer"> 
+            <img
+              src={process.env.PUBLIC_URL + "/images/iith-logo.jpeg"}
+              alt="AI dept logo"
+              className="w-44 lg:w-60 h-auto object-contain"
+            />
+            </a>
+          </div>
           {/* Desktop Navigation - Hidden on mobile */}
-          <div className="hidden md:flex items-center space-x-8 justify-center">
+          <div className="hidden md:flex items-center space-x-4 xl:space-x-8 justify-center">
             {HeaderConstants?.map((header) => (
               <a
                 href={header?.href}
-                className={`text-lg transition-colors ${
+                className={`text-base xl:text-lg transition-colors ${
                   activeSection === header?.href
                     ? "text-teal-700 font-bold"
                     : "text-gray-700 font-medium hover:text-teal-700"
