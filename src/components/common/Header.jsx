@@ -1,8 +1,40 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { HeaderConstants } from "../../constants";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Get all sections
+      const sections = HeaderConstants.map((item) =>
+        document.querySelector(item.href)
+      );
+
+      // Find which section is currently in view
+      const current = sections.find((section) => {
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          // Check if section is in viewport (accounting for header height)
+          return rect.top <= 100 && rect.bottom >= 100;
+        }
+        return false;
+      });
+
+      if (current) {
+        setActiveSection(`#${current.id}`);
+      }
+    };
+
+    // Add scroll listener
+    window.addEventListener("scroll", handleScroll);
+    // Call once on mount to set initial active section
+    handleScroll();
+
+    // Cleanup
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -10,14 +42,18 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md">
-      <nav className="container mx-auto px-4 py-4">
+      <nav className="container mx-auto px-4 py-4 relative">
         <div className="flex items-center justify-end md:justify-center">
           {/* Desktop Navigation - Hidden on mobile */}
           <div className="hidden md:flex items-center space-x-8 justify-center">
             {HeaderConstants?.map((header) => (
               <a
                 href={header?.href}
-                className="text-gray-700 hover:text-blue-600 transition-colors"
+                className={`text-lg transition-colors ${
+                  activeSection === header?.href
+                    ? "text-teal-700 font-bold"
+                    : "text-gray-700 font-medium hover:text-teal-700"
+                }`}
                 key={header?.id}
               >
                 {header?.name}
@@ -68,15 +104,19 @@ const Header = () => {
 
         {/* Mobile Dropdown Menu */}
         <div
-          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+          className={`md:hidden absolute left-0 right-0 top-full bg-white shadow-lg overflow-hidden transition-all duration-300 ease-in-out ${
             isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
           }`}
         >
-          <div className="pt-4 pb-2 space-y-2">
+          <div className="pt-4 pb-2 px-4 space-y-2">
             {HeaderConstants?.map((header) => (
               <a
                 href={header?.href}
-                className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors"
+                className={`block px-4 py-2 rounded transition-colors ${
+                  activeSection === header?.href
+                    ? "bg-teal-100 text-teal-700 font-bold"
+                    : "text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+                }`}
                 key={header?.id}
                 onClick={() => setIsMenuOpen(false)}
               >
