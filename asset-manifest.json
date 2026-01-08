@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ai-iith-web.github.io/static/css/main.9766e67d.css",
+    "main.js": "/ai-iith-web.github.io/static/js/main.070ffef5.js",
+    "static/js/453.7117ff66.chunk.js": "/ai-iith-web.github.io/static/js/453.7117ff66.chunk.js",
+    "index.html": "/ai-iith-web.github.io/index.html",
+    "main.9766e67d.css.map": "/ai-iith-web.github.io/static/css/main.9766e67d.css.map",
+    "main.070ffef5.js.map": "/ai-iith-web.github.io/static/js/main.070ffef5.js.map",
+    "453.7117ff66.chunk.js.map": "/ai-iith-web.github.io/static/js/453.7117ff66.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9766e67d.css",
+    "static/js/main.070ffef5.js"
+  ]
+}
