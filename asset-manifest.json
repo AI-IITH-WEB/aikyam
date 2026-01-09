@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/aikyam/static/css/main.fdc67efc.css",
-    "main.js": "/aikyam/static/js/main.b323ce64.js",
+    "main.css": "/aikyam/static/css/main.400554d8.css",
+    "main.js": "/aikyam/static/js/main.92d7c404.js",
     "index.html": "/aikyam/index.html",
-    "main.fdc67efc.css.map": "/aikyam/static/css/main.fdc67efc.css.map",
-    "main.b323ce64.js.map": "/aikyam/static/js/main.b323ce64.js.map"
+    "main.400554d8.css.map": "/aikyam/static/css/main.400554d8.css.map",
+    "main.92d7c404.js.map": "/aikyam/static/js/main.92d7c404.js.map"
   },
   "entrypoints": [
-    "static/css/main.fdc67efc.css",
-    "static/js/main.b323ce64.js"
+    "static/css/main.400554d8.css",
+    "static/js/main.92d7c404.js"
   ]
 }
