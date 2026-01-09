@@ -2,6 +2,7 @@ import About from './components/About';
 import Header from './components/common/Header';
 import EventSchedule from './components/EventSchedule';
 import Home from './components/Home';
+import Venue from './components/Venue';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Home />
       <About />
       <EventSchedule />
+      <Venue />
     </div>
   );
 }

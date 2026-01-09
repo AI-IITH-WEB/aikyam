@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { HeaderConstants } from "../../constants";
+import { HeaderConstants, RegistrationFormLink } from "../../constants";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -44,20 +44,28 @@ const Header = () => {
     <header className="sticky top-0 z-50 bg-white shadow-md">
       <nav className="container mx-auto py-4 relative">
         <div className="flex items-center justify-between px-2">
-        <div className="flex gap-6 2xl:gap-16 items-center">
-            <a href="https://ai.iith.ac.in" target="_blank" rel="noopener noreferrer">
-            <img
-              src={process.env.PUBLIC_URL + "/images/ai-department-logo.jpeg"}
-              alt="AI dept logo"
-              className="w-12 lg:w-20 h-auto object-contain"
-            />
+          <div className="flex gap-6 2xl:gap-16 items-center">
+            <a
+              href="https://ai.iith.ac.in"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={process.env.PUBLIC_URL + "/images/ai-department-logo.jpeg"}
+                alt="AI dept logo"
+                className="w-12 lg:w-20 h-auto object-contain"
+              />
             </a>
-            <a href="https://iith.ac.in" target="_blank" rel="noopener noreferrer"> 
-            <img
-              src={process.env.PUBLIC_URL + "/images/iith-logo.jpeg"}
-              alt="AI dept logo"
-              className="w-44 lg:w-60 h-auto object-contain"
-            />
+            <a
+              href="https://iith.ac.in"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={process.env.PUBLIC_URL + "/images/iith-logo.jpeg"}
+                alt="AI dept logo"
+                className="w-44 lg:w-60 h-auto object-contain"
+              />
             </a>
           </div>
           {/* Desktop Navigation - Hidden on mobile */}
@@ -75,9 +83,15 @@ const Header = () => {
                 {header?.name}
               </a>
             ))}
-            <button className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors">
-              Register
-            </button>
+            <a
+              href={RegistrationFormLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-all duration-300 hover:shadow-lg hover:scale-[1.02]">
+                Register
+              </button>
+            </a>
           </div>
 
           {/* Mobile Hamburger Button - Hidden on desktop */}
