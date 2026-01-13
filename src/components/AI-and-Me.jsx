@@ -18,11 +18,11 @@ const AIAndMe = ({ event }) => {
           <p className="text-base">{event?.detailsTitle}</p>
           {event?.detailsPoints && (
             <ul
-              style={{ "list-style-type": "disc" }}
+              style={{ listStyleType: "disc" }}
               className="flex flex-col gap-4 px-6 lg:px-10"
             >
-              {event?.detailsPoints?.map((detail) => (
-                <li>{detail}</li>
+              {event?.detailsPoints?.map((detail, index) => (
+                <li key={index + 1}>{detail}</li>
               ))}
             </ul>
           )}

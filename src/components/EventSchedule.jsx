@@ -6,9 +6,21 @@ import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import CulturalEvent from "./CulturalEvent";
 import AIAndMe from "./AI-and-Me";
 import PanelDiscussion from "./PanelDiscussion";
+import StartupPictch from "./StartupPitch";
+import PlaneryTalk from "./PlaneryTalk";
+
+const openAccordionInitialState = {
+  6: true,
+  8: true,
+  9: true,
+  10: true,
+  12: true,
+  13: true,
+  17: true
+}
 
 const EventSchedule = () => {
-  const [openAccordions, setOpenAccordions] = useState({});
+  const [openAccordions, setOpenAccordions] = useState(openAccordionInitialState);
 
   const toggleAccordion = (eventId) => {
     setOpenAccordions((prev) => ({
@@ -21,10 +33,14 @@ const EventSchedule = () => {
     const title = event?.title;
     if (title === "AI and Me") {
       return <AIAndMe event={event} />
-    } else if (title === "Cultural Event") {
+    } else if (event?.isCulturalEvent) {
       return <CulturalEvent />
-    } else if (title === "Panel Discussion I") {
+    } else if (event?.isPanelDiscussion) {
       return <PanelDiscussion title={title} />
+    } else if (event?.isStartupPitch) {
+      return <StartupPictch />
+    } else if (event?.isPlaneryOrKeynoteTalk) {
+      return <PlaneryTalk speaker={event?.speakerDetails} />
     }
   }
 

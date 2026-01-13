@@ -3,10 +3,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState, useEffect, useCallback } from 'react';
 
 const carouselImages = [
-  "/images/carouselImages/ai-for-all.jpeg",
+  "/images/carouselImages/planery-talk.jpg",
+  "/images/carouselImages/keynote.jpg",
+  "/images/carouselImages/panel-discussion-1.jpeg",
+  "/images/carouselImages/panel-discussion-2.jpg",
+  "/images/carouselImages/pitch-competition-1-HR.png",
   "/images/carouselImages/ai-and-me-flyer.png",
-  "/images/carouselImages/event-schedule.jpeg",
-  "/images/carouselImages/pitch-competition-1-HR.png"
+  "/images/carouselImages/ai-for-all.jpeg"
 ];
 
 const ImageCarousel = () => {
@@ -65,7 +68,7 @@ const ImageCarousel = () => {
       <div className="flex items-center justify-center mt-2 lg:mt-2">
         <button
           onClick={handlePrev}
-          className="p-2 hover:bg-gray-100 rounded-full transition-colors text-white"
+          className="p-2 hover:md:bg-gray-100 rounded-full transition-colors text-white"
           aria-label="Previous image"
         >
           <FontAwesomeIcon icon={faChevronLeft} />
@@ -86,7 +89,7 @@ const ImageCarousel = () => {
 
         <button
           onClick={handleNext}
-          className="p-2 hover:bg-gray-100 rounded-full transition-colors text-white"
+          className="p-2 hover:md:bg-gray-100 rounded-full transition-colors text-white"
           aria-label="Next image"
         >
           <FontAwesomeIcon icon={faChevronRight} />

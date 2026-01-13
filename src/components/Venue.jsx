@@ -3,7 +3,7 @@ import AnimatedSection from "./common/AnimatedSection";
 
 const Venue = () => {
   return (
-    <secion
+    <section
       id="venue"
       className="flex flex-col justify-center items-center gap-4 p-6"
     >
@@ -24,7 +24,7 @@ const Venue = () => {
           />
         </div>
       </AnimatedSection>
-    </secion>
+    </section>
   );
 };
 

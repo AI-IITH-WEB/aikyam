@@ -2,42 +2,87 @@ export const HeaderConstants = [
   { id: 1, name: "Home", href: "#home" },
   { id: 2, name: "About", href: "#about" },
   { id: 3, name: "Event Schedule", href: "#schedule" },
-  { id: 4, name: "Speakers", href: "#speakers" },
-  { id: 5, name: "Venue", href: "#venue" },
+  // { id: 4, name: "Speakers", href: "#speakers" },
+  { id: 4, name: "Venue", href: "#venue" },
 ];
 
 export const EventScheduleConstants = [
   { id: 1, time: "9:30 AM", title: "Welcoming Guests" },
   { id: 2, time: "9:35 AM", title: "Lamp Lighting and Inauguration" },
-  { id: 3, time: "9:40 AM", title: "Address by the Director, IIT Hyderabad" },
-  { id: 4, time: "9:50 AM", title: "Plenary Talk" },
-  { id: 5, time: "10:30 AM", title: "Coffee Break & Networking" },
-  { id: 6, time: "11:00 AM", title: "Keynote Talk" },
   {
-    id: 7,
+    id: 3,
+    time: "9:40 AM",
+    title: "Welcome Address by the Director, IIT Hyderabad",
+  },
+  {
+    id: 4,
+    time: "9:50 AM",
+    title:
+      "Brief Introduction by Mr. Mohammad Safirulla (CEO, India AI Mission)",
+  },
+  {
+    id: 5,
+    time: "10:00 AM",
+    title:
+      "Address by Mr. Thomas Schneider, Ambassador and Co-Director of International Affairs, Switzerland and Co-Chair Working group",
+    description: "Inclusion for Empowerment",
+  },
+  {
+    id: 6,
+    time: "10:10 AM",
+    title: "Plenary Talk by Shri Rajesh Agarwal",
+    hasToggle: true,
+    isPlaneryOrKeynoteTalk: true,
+    speakerDetails: {
+      name: "Shri Rajesh Agarwal",
+      tagLine: "Chief Secretary, Government of Maharashtra",
+      profileImage: "/images/rajesh-agarwal.webp",
+    },
+  },
+  { id: 7, time: "10:30 AM", title: "Coffee Break & Networking" },
+  {
+    id: 8,
+    time: "11:00 AM",
+    title: "Keynote Talk by Dr. Shailesh Kumar",
+    hasToggle: true,
+    isPlaneryOrKeynoteTalk: true,
+    speakerDetails: {
+      name: "Dr. Shailesh Kumar",
+      tagLine:
+        "Chief Data Scientist, Centre of Excellence in AI/ML, Reliance Jio, Dean of Jio Institute",
+      profileImage: "/images/shailesh.jpeg",
+      bio: "<p>Dr. Shailesh Kumar is the Chief Data Scientist at the Centre of Excellence in AI/ML, Reliance Jio, and Dean at Jio Institute. He has over 20 international publications and 20+ patents in AI/ML and was recognized among India’s top 10 data scientists in 2015. Dr. Kumar brings more than two decades of experience in building AI and machine learning solutions across domains such as telecom, finance, retail, healthcare, agriculture, and education. He holds a B.Tech in Computer Science from IIT (BHU) Varanasi and an MS and PhD in Computer Science/Engineering from the University of Texas at Austin.</p>",
+    },
+  },
+  {
+    id: 9,
     time: "11:45 AM",
     title: "Panel Discussion I",
     description: "Promoting Inclusive AI Development",
     hasToggle: true,
-    isPanelDiscussion: true
+    isPanelDiscussion: true,
   },
   {
-    id: 8,
+    id: 10,
     time: "12:30 PM",
     title: "Panel Discussion II",
     description: "Societal Adoption of AI: Opportunities & Challenges",
+    hasToggle: true,
+    isPanelDiscussion: true,
   },
-  { id: 9, time: "1:00 PM", title: "Lunch" },
+  { id: 11, time: "1:00 PM", title: "Lunch" },
   {
-    id: 10,
+    id: 12,
     time: "2:00 PM",
     title: "Startup Pitch Event",
     description: "Theme: AI for All",
+    hasToggle: true,
+    isStartupPitch: true,
   },
-  { id: 11, time: "3:00 PM", title: "Coffee Break & Networking" },
+
   {
-    id: 12,
-    time: "3:30 PM",
+    id: 13,
+    time: "3:00 PM",
     title: "AI and Me",
     description: "Student Perspectives on AI and its Future",
     hasToggle: true,
@@ -71,21 +116,22 @@ export const EventScheduleConstants = [
       },
     ],
   },
-  { id: 13, time: "4:30 PM", title: "Results & Closing Session" },
-  {
-    id: 14,
-    time: "5:00 PM",
-    title: "Working Group Hybrid Meeting / AI at IITH Poster Session",
-  },
-  { id: 15, time: "6:30 PM", title: "Refreshments & Networking" },
+  { id: 14, time: "4:00 PM", title: "Coffee Break & Networking" },
+  { id: 15, time: "4:30 PM", title: "Results & Closing Session" },
   {
     id: 16,
+    time: "5:00 PM",
+    title:
+      "Working Group Hybrid Meeting / AI at IITH Poster Session / Startup Showcase",
+  },
+  {
+    id: 17,
     time: "7:00 PM",
     title: "Cultural Event",
     hasToggle: true,
     isCulturalEvent: true,
   },
-  { id: 17, time: "8:30 PM", title: "Dinner" },
+  { id: 18, time: "8:30 PM", title: "Dinner" },
 ];
 
 export const CulturalEventArtists = [
@@ -132,39 +178,84 @@ export const CulturalEventArtists = [
   },
 ];
 
-export const PanelDiscussion1Members = [
-  {
-    id: 1,
-    name: "Romi Srivastava",
-    linkendInProfile:
-      "https://www.linkedin.com/in/romi-srivastava-3130a730/?originalSubdomain=in",
-    profileImage: "/images/panelDiscussion1/romi-srivastava.jpeg",
-    bio: "Romi Srivastava is a Lead AI Engineer at Honeywell, specializing in deep learning and computer vision for autonomous navigation and other high-impact applications. Based in Bengaluru, India, Romi brings more than a decade of industrial R&D experience,  complemented by strong academic training in artificial intelligence and visual information systems. His work spans domains such as aerospace, agriculture, medical science, and broader autonomous systems, translating cutting-edge research into real-world products and solutions.",
+export const PanelDiscussion1Members = {
+  moderator: {
+    name: "Sumohana Channappayya",
+    profileImage: "/images/panelDiscussion1/sumohana-channappayya.jpg",
   },
-  {
-    id: 2,
-    name: "Swarup Shanti Medasani",
-    linkendInProfile:
-      "https://www.linkedin.com/in/swarup-medasani-80b2a713/?originalSubdomain=in",
-    profileImage: "/images/panelDiscussion1/swarup-shanti.jpeg",
-    bio: "Mr. Swarup Shanti Medasani is Director of Engineering at MathWorks, leading product development teams in the Greater Hyderabad Area, India. With more than two decades of experience spanning research, product engineering, and technology leadership, he has previously served as Chief Technology Officer at Uurmi Systems and as a senior research staff scientist at HRL Laboratories, Malibu, USA. He holds a Ph.D. in Computer Engineering and Computer Science from the University of Missouri-Columbia and brings deep expertise in artificial intelligence and signal processing to his current role.",
+  panelMembers: [
+    {
+      id: 1,
+      name: "Romi Srivastava",
+      linkendInProfile:
+        "https://www.linkedin.com/in/romi-srivastava-3130a730/?originalSubdomain=in",
+      profileImage: "/images/panelDiscussion1/romi-srivastava.jpeg",
+      bio: "Romi Srivastava is a Lead AI Engineer at Honeywell, specializing in deep learning and computer vision for autonomous navigation and other high-impact applications. Based in Bengaluru, India, Romi brings more than a decade of industrial R&D experience,  complemented by strong academic training in artificial intelligence and visual information systems. His work spans domains such as aerospace, agriculture, medical science, and broader autonomous systems, translating cutting-edge research into real-world products and solutions.",
+    },
+    {
+      id: 2,
+      name: "Swarup Shanti Medasani",
+      linkendInProfile:
+        "https://www.linkedin.com/in/swarup-medasani-80b2a713/?originalSubdomain=in",
+      profileImage: "/images/panelDiscussion1/swarup-shanti.jpeg",
+      bio: "Mr. Swarup Shanti Medasani is Director of Engineering at MathWorks, leading product development teams in the Greater Hyderabad Area, India. With more than two decades of experience spanning research, product engineering, and technology leadership, he has previously served as Chief Technology Officer at Uurmi Systems and as a senior research staff scientist at HRL Laboratories, Malibu, USA. He holds a Ph.D. in Computer Engineering and Computer Science from the University of Missouri-Columbia and brings deep expertise in artificial intelligence and signal processing to his current role.",
+    },
+    {
+      id: 3,
+      name: "Ramia Kannan Babu",
+      linkendInProfile:
+        "https://www.linkedin.com/in/kannan-babu-ramia-7393649/?originalSubdomain=in",
+      profileImage: "/images/panelDiscussion1/ramia-kannan.jpeg",
+      bio: "Mr. Ramia Kannan Babu is a Senior Principal Engineer in Edge Computing at Intel Technology India, bringing over 25 years of experience in system architecture, packet processing, and wireless infrastructure.He has served in multiple engineering leadership roles at Intel, including Principal Engineer and System Architect for data plane solutions, following earlier research engineering positions at CDOT and VXL Instruments in Bangalore. Mr. Kannan holds an M.S. in Software Systems from BITS Pilani and a B.E. in Electronics and Communications from Government College of Engineering, Tirunelveli. His expertise spans SoC and embedded systems design, and he is widely recognized within Intel for his technical contributions and mentoring across cross-functional teams.",
+    },
+    {
+      id: 4,
+      name: "Chakravarthy Bhagavati",
+      homepage: "https://scis.uohyd.ac.in/~chakcs/",
+      profileImage: "/images/panelDiscussion1/bhagavati.jpeg",
+      bio: "Professor Bhagvati’s research spans Colour Image Processing, Pattern Recognition, Document Analysis, and Deep Learning, with notable contributions to Telugu Optical Character Recognition, where his lab has developed a complete end-to-end OCR system achieving high real-world accuracy. His work beautifully bridges theory and practice, combining insights from vision science, stochastic processes, and modern deep learning. He holds a Ph.D. in Computer Science from Rensselaer Polytechnic Institute, and has been actively involved in teaching and mentoring students across areas such as Programming Languages, Operating Systems, Computer Vision, Numerical Methods, and Deep Learning.",
+    },
+  ],
+};
+
+export const PanelDiscussion2Members = {
+  moderator: {
+    name: "Vineeth N Balasubramanian",
+    profileImage: "/images/panelDiscussion2/vineeth-balasubramanian.jpg",
   },
-  {
-    id: 3,
-    name: "Ramia Kannan Babu",
-    linkendInProfile:
-      "https://www.linkedin.com/in/kannan-babu-ramia-7393649/?originalSubdomain=in",
-    profileImage: "/images/panelDiscussion1/ramia-kannan.jpeg",
-    bio: "Mr. Ramia Kannan Babu is a Senior Principal Engineer in Edge Computing at Intel Technology India, bringing over 25 years of experience in system architecture, packet processing, and wireless infrastructure.He has served in multiple engineering leadership roles at Intel, including Principal Engineer and System Architect for data plane solutions, following earlier research engineering positions at CDOT and VXL Instruments in Bangalore. Mr. Kannan holds an M.S. in Software Systems from BITS Pilani and a B.E. in Electronics and Communications from Government College of Engineering, Tirunelveli. His expertise spans SoC and embedded systems design, and he is widely recognized within Intel for his technical contributions and mentoring across cross-functional teams.",
-  },
-  {
-    id: 4,
-    name: "Chakravarthy Bhagavati",
-    homepage: "https://scis.uohyd.ac.in/~chakcs/",
-    profileImage: "/images/panelDiscussion1/bhagavati.jpeg",
-    bio: "Professor Bhagvati’s research spans Colour Image Processing, Pattern Recognition, Document Analysis, and Deep Learning, with notable contributions to Telugu Optical Character Recognition, where his lab has developed a complete end-to-end OCR system achieving high real-world accuracy. His work beautifully bridges theory and practice, combining insights from vision science, stochastic processes, and modern deep learning. He holds a Ph.D. in Computer Science from Rensselaer Polytechnic Institute, and has been actively involved in teaching and mentoring students across areas such as Programming Languages, Operating Systems, Computer Vision, Numerical Methods, and Deep Learning.",
-  },
-];
+  panelMembers: [
+    {
+      id: 1,
+      name: "Sri Vasireddy",
+      linkendInProfile: "https://www.linkedin.com/in/srivasireddy",
+      profileImage: "/images/panelDiscussion2/vasireddy.jpg",
+      bio: "Mr. Sri Vasireddy is the Co-Founder and Chief Executive Officer of REAN Foundation, a mission-driven non-profit organization focused on improving healthcare access and enabling patient support beyond hospitals, especially for individuals in remote and underserved communities. Through initiatives such as REAN Care, he has been actively involved in promoting solutions that help patients and families manage health needs from home with dignity and continuity of care. With a background that combines leadership, technology, and social impact, Mr. Vasireddy has also contributed to innovation discussions in the health-tech ecosystem, including being listed as a member of the American Heart Association’s Health Tech Advisory Group.",
+    },
+    {
+      id: 2,
+      name: "Madhuvanti Kale",
+      linkendInProfile:
+        "https://www.linkedin.com/in/madhuvanti-kale-phd-16ab43226",
+      profileImage: "/images/panelDiscussion2/madhuvanti-kale.png",
+      bio: "Dr. Madhuvanti Kale is a sustainability professional with an academic background in agricultural waste valorization. She has over 10 years of academic and industrial research experience in the US, Europe and India. She has led social programs focused on environmental sustainability at a major international non-profit. She recently co-founded Avartan Labs, a startup dedicated to improving the efficiency of solid waste management through socially conscious deployment of AI-ML, together with Prof. Srijith PK and Prof. Vineeth Balasubramanian.",
+    },
+    {
+      id: 3,
+      name: "Subhabrata Chakrabarti",
+      linkendInProfile:
+        "https://www.linkedin.com/in/subhabrata-chakrabarti-183078a",
+      profileImage: "/images/panelDiscussion2/subhabrata.png",
+      bio: "Dr. Subhabrata Chakrabarti is currently the Associate Director of Research at the L V Prasad Eye Institute (LVPEI), Hyderabad. He is a Molecular Geneticist largely trained in India and at the National Eye Institute (NEI), NIH, USA, and has contributed to the understanding of the molecular mechanisms in complex eye diseases. He is a Molecular Geneticist largely trained in India and at the National Eye Institute (NEI), NIH, USA, and has contributed to the understanding of the molecular mechanisms in complex eye diseases. His major work on functional genomics of primary congenital glaucoma (PCG) that affects children in the developing world, has convincingly demonstrated the underlying mechanisms in disease pathogenesis and ocular development. His works have provided evolutionary insights on the geographical structuring and migrations of these disease-associated mutations worldwide.",
+    },
+    {
+      id: 4,
+      name: "Voruganti Aravind",
+      linkendInProfile: "https://www.linkedin.com/in/aravindvoruganti",
+      profileImage: "/images/panelDiscussion2/voruganti-aravind.jpg",
+      bio: "Voruganti Aravind is a deep tech leader, ecosystem architect, and venture builder working at the intersection of work, intelligence, productivity, and trust in the era of AI and decentralized systems. A seasoned blockchain leader with over 13 years of industry experience, currently serving as Director and Global Vice President. He has led production-grade enterprise blockchain projects across 10+ industry verticals, including supply chain, trade finance, CBDCs, energy, oil and gas, GRC, NFTs, and the educational metaverse.A Blockchain Solution Architect, Product Leader, and Corporate Trainer, he has trained 3,500+ professionals globally, including government officials and fintech leaders across India, Singapore, the US, UK, and the Middle East. He is also the Chair of the Hyperledger Governance, Risk, and Compliance SIG and was recognized among the Top 50 Blockchain Influencers in India (2022).",
+    },
+  ],
+};
 
 export const RegistrationFormLink =
   "https://docs.google.com/forms/d/e/1FAIpQLSf-WyXMYpNy66UCXbQM9ACaAbUKLtEjIV3dJujIj_ebcTLpiQ/viewform";

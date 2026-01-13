@@ -76,7 +76,7 @@ const CulturalEvent = () => {
                     alt="profileImage"
                   />
                 </div>
-                <p>{parse(artist?.details)}</p>
+                <div>{parse(artist?.details)}</div>
               </div>
             </div>
           </AnimatedSection>

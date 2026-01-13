@@ -11,8 +11,12 @@ const Home = () => {
       <div className="flex flex-col gap-16 w-full min-h-[100vh] justify-center items-center bg-gradient-to-r from-gray-700 via-teal-800 to-teal-700 p-10 md:p-20">
         <AnimatedSection delay={200}>
           <div className="flex flex-col justify-center items-center gap-6 text-white text-center">
+            <div className="flex gap-4 items-center justify-center">
+            <img src={process.env.PUBLIC_URL + "/images/banner-logo.jpg"} alt="bannerImage" className="w-[85%] md:w-[65%]" />
+            <img src={process.env.PUBLIC_URL + "/images/ai-impact-logo.png"} alt="impactImage" className="w-[25%] md:w-[15%]" />
+            </div>
             <p className="font-medium text-3xl md:text-4xl">
-              AI for Inclusion & Empowerment
+              Conclave on AI for Inclusion & Empowerment
             </p>
             <p className="font-medium text-xl md:text-2xl">
               A Pre-Summit Forum under the India AI Impact Summit 2026
