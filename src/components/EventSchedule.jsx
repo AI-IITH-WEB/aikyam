@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import CulturalEvent from "./CulturalEvent";
 import AIAndMe from "./AI-and-Me";
+import PanelDiscussion from "./PanelDiscussion";
 
 const EventSchedule = () => {
   const [openAccordions, setOpenAccordions] = useState({});
@@ -15,6 +16,17 @@ const EventSchedule = () => {
       [eventId]: !prev[eventId],
     }));
   };
+
+  const renderEventDetailsBasedOnTitle = (event) => {
+    const title = event?.title;
+    if (title === "AI and Me") {
+      return <AIAndMe event={event} />
+    } else if (title === "Cultural Event") {
+      return <CulturalEvent />
+    } else if (title === "Panel Discussion I") {
+      return <PanelDiscussion title={title} />
+    }
+  }
 
   return (
     <section
@@ -29,7 +41,7 @@ const EventSchedule = () => {
           <div className="flex flex-col gap-4 py-10 lg:px-4 xl:px-40">
             {EventScheduleConstants?.map((event, index) => (
               <AnimatedSection key={event?.id} delay={index * 50}>
-                <div className={`rounded-lg border border-solid border-teal-800 overflow-hidden transition-all duration-300 hover:shadow-lg ${(event?.isCulturalEvent && openAccordions[event?.id]) ? "" : "md:hover:scale-[1.02]"}`}>
+                <div className={`rounded-lg border border-solid border-teal-800 overflow-hidden transition-all duration-300 hover:shadow-lg ${((event?.isCulturalEvent || event?.isPanelDiscussion) && openAccordions[event?.id]) ? "" : "md:hover:scale-[1.02]"}`}>
                   {/* Main Event Header */}
                   <div
                     className={`flex justify-between items-center p-4 font-medium text-xl transition-all duration-300 md:hover:bg-teal-600 md:hover:text-white ${
@@ -73,11 +85,7 @@ const EventSchedule = () => {
                           : "max-h-0 opacity-0"
                       } overflow-hidden`}
                     >
-                      {event?.isCulturalEvent ? (
-                        <CulturalEvent event={event} />
-                      ) : (
-                        <AIAndMe event={event} />
-                      )}
+                      {renderEventDetailsBasedOnTitle(event)}
                     </div>
                   )}
                 </div>

@@ -3,9 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState, useEffect, useCallback } from 'react';
 
 const carouselImages = [
-  "/images/ai-for-all.jpeg",
-  "/images/ai-and-me-flyer.png",
-  "/images/event-schedule.jpeg",
+  "/images/carouselImages/ai-for-all.jpeg",
+  "/images/carouselImages/ai-and-me-flyer.png",
+  "/images/carouselImages/event-schedule.jpeg",
+  "/images/carouselImages/pitch-competition-1-HR.png"
 ];
 
 const ImageCarousel = () => {
