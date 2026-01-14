@@ -2,7 +2,6 @@ export const HeaderConstants = [
   { id: 1, name: "Home", href: "#home" },
   { id: 2, name: "About", href: "#about" },
   { id: 3, name: "Event Schedule", href: "#schedule" },
-  // { id: 4, name: "Speakers", href: "#speakers" },
   { id: 4, name: "Venue", href: "#venue" },
 ];
 
