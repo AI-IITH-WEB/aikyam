@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState, useEffect, useCallback } from 'react';
 
 const carouselImages = [
+  "/images/carouselImages/event-schedule.jpg",
   "/images/carouselImages/planery-talk.jpg",
   "/images/carouselImages/keynote.jpg",
   "/images/carouselImages/panel-discussion-1.jpeg",

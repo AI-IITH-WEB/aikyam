@@ -161,11 +161,11 @@ export const CulturalEventArtists = [
   },
   {
     id: 4,
-    name: "Vidwan Sri Panduranga Murali",
-    profileSrc: "/images/artists/panduranga-profile.jpeg",
+    name: "Vidwan Sri Panduga Murali",
+    profileSrc: "/images/artists/panduga-profile.jpeg",
     tagLine: "Tabla Artist",
     details:
-      "<p>Sri Panduranga Murali have taken his initial tabla training from his father Late Panduranga Anjaiah who have worked as a staff artist of A.I.R Hyderabad. He also learned tabla from eminent artists of Hyderabad like Late Sri Lakshman Rao, Late Sri Sathyanarayanam, and Late Ashiq Hussain Khan. He did his diploma from Sri Potti Sri Ramulu University of Hyderabad, did higher grade TTC (Teacher Training Course) from Gandarav Maha Vidyalaya, and worked as a Tabla Instructor in TSWR Fine Arts School. He has been performing tabla as a B-High grade artist in All India Radio since three decades.<br /><br /><p>He accompanied all the eminent artists of Hyderabad and travelled for several concerts in countries like New Zealand, Australia, Malaysia, Fuji Island, Russia, West Indies, East Africa, Croatia, etc. through Indian council for cultural relations, Government of India.</p></p>",
+      "<p>Sri Panduga Murali have taken his initial tabla training from his father Late Panduga Anjaiah who have worked as a staff artist of A.I.R Hyderabad. He also learned tabla from eminent artists of Hyderabad like Late Sri Lakshman Rao, Late Sri Sathyanarayanam, and Late Ashiq Hussain Khan. He did his diploma from Sri Potti Sri Ramulu University of Hyderabad, did higher grade TTC (Teacher Training Course) from Gandarav Maha Vidyalaya, and worked as a Tabla Instructor in TSWR Fine Arts School. He has been performing tabla as a B-High grade artist in All India Radio since three decades.<br /><br /><p>He accompanied all the eminent artists of Hyderabad and travelled for several concerts in countries like New Zealand, Australia, Malaysia, Fuji Island, Russia, West Indies, East Africa, Croatia, etc. through Indian council for cultural relations, Government of India.</p></p>",
   },
   {
     id: 5,
