@@ -1,6 +1,7 @@
 import React from "react";
 import AnimatedSection from "./common/AnimatedSection";
 import { PanelDiscussion1Members, PanelDiscussion2Members } from "../constants";
+import parse from "html-react-parser";
 
 const PanelDiscussion = ({ title }) => {
   const panelDiscussionMembers =
@@ -27,9 +28,14 @@ const PanelDiscussion = ({ title }) => {
                 alt="profileImage"
               />
             </div>
-            <p className="font-bold text-lg">
-              {panelDiscussionMembers?.moderator?.name}
-            </p>
+            <div className="flex flex-col gap-0 items-center">
+              <p className="font-bold text-lg">
+                {panelDiscussionMembers?.moderator?.name}
+              </p>
+              <p className="font-normal text-base">
+                {panelDiscussionMembers?.moderator?.tagLine}
+              </p>
+            </div>
           </div>
         </AnimatedSection>
       </div>
@@ -59,7 +65,12 @@ const PanelDiscussion = ({ title }) => {
                         alt="profileImage"
                       />
                     </div>
-                    <p className="font-bold text-lg">{member?.name}</p>
+                    <div className="flex flex-col gap-0 items-center">
+                      <p className="font-bold text-lg">{member?.name}</p>
+                      <p className="font-normal text-base">
+                        {parse(member?.tagLine)}
+                      </p>
+                    </div>
                   </div>
                   <p>{member?.bio}</p>
                 </div>
